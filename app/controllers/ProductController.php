@@ -3,9 +3,8 @@ class ProductController
 {
     public function index()
     {
-        echo'product controller ';
+        $db = new product();
+        $data['products'] = $db->getAllProducts();
+        View::load('jewellery/jewellery', $data);
     }
 }
-
-
-?>

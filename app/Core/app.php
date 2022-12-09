@@ -1,49 +1,51 @@
 <?php
+
 /*************************\
 -   front-end controller  -
 \*************************/
-class app{
+class app
+{
     protected $controller = "HomeController";
     protected $action = "index";
     protected $param = [];
+
     public function __construct()
     {
         $this->prepareURL();
         $this->render();
     }
-/****************************************************\
--  extract controller and method and all parameters  -
--                    @return void                    -
-\****************************************************/
-    private function prepareURL(){
+
+    /****************************************************\
+    -  extract controller and method and all parameters  -
+    -                    @return void                    -
+     \***************************************************/
+    private function prepareURL()
+    {
         $url = $_SERVER['REQUEST_URI'];
-        if( !empty($url) )
-        {
-            $url = trim($url,'/');
-            $url = explode('/',$url);
+        if (!empty($url)) {
+            $url = trim($url, '/');
+            $url = explode('/', $url);
             // define the controller
-            $this->controller = (isset($url[0]) && !empty($url[0])) ? ucwords($url[0]) . "Controller" : "HomeController"; 
+            $this->controller = (isset($url[0]) && !empty($url[0])) ? ucwords($url[0]) . "Controller" : "HomeController";
             // define the action
-            $this->action = (isset($url[1]) && !empty($url[1])) ? $url[1] : "index"; 
-            // define the parametre
-            unset($url[0],$url[1]);
-            $this->param = !empty($url) ? array_values($url) : [];            
+            $this->action = (isset($url[1]) && !empty($url[1])) ? $url[1] : "index";
+            //define the parametre
+            unset($url[0], $url[1]);
+            $this->param = !empty($url) ? array_values($url) : [];
         }
     }
+
     private function render()
     {
-        if( class_exists($this->controller) ){
+        if (class_exists($this->controller)) {
             $controller = new $this->controller;
-            if( method_exists($controller , $this->action))
-            {
-                call_user_func_array([$controller,$this->action],$this->param);
-            }else
-            {
-                echo ' this methode :'. $this->action.' is not Exist';
+            if (method_exists($controller, $this->action)) {
+                call_user_func_array([$controller, $this->action], $this->param);
+            } else {
+                echo ' this methode :' . $this->action . ' is not Exist';
             }
-        }else
-        {
-            echo ' this controoller :'. $this->controller.' is not Exist';
+        } else {
+            echo ' this controoller :' . $this->controller . ' is not Exist';
         }
     }
 }

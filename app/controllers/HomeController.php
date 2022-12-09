@@ -5,7 +5,7 @@ class HomeController{
         // echo $id;
         // echo 'hahahaha : '. __CLASS__. ' and .. is' . __METHOD__;
         $data=[];
-        View::load('Home');
+        View::load('Home',$data );
     }
 }
 

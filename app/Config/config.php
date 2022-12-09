@@ -1,6 +1,9 @@
 <?php
+//define site url
+const BURL = 'http://bijo.com/';
+
 /****************************************************\
--                   databas  configuration           -
+-               database  configuration              -
 \****************************************************/
 
 define("HOST","localhost");
@@ -9,5 +12,3 @@ define("PASS","");
 define("DBNAME","bijo");
 
 
-
-?>
