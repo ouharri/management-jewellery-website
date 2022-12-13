@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // echo ' HELLO ';
 // echo $_SERVER['REDIRECT_URL'];
@@ -11,4 +11,3 @@ require_once(dirname(__DIR__) . DS .'public' . DS . 'autoLoad.php');
 
 // new app();
 
-?>

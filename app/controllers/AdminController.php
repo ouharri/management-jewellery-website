@@ -7,6 +7,7 @@ class AdminController
      */
     public function index()
     {
+        redirect::session();
         $db = new product();
         $data['products'] = $db->getAllProducts();
         View::load('jewellery/admin/index', $data);
@@ -15,6 +16,7 @@ class AdminController
     //add new product - view add page
     public function add()
     {
+        redirect::session();
         View::load('jewellery/admin/add');
     }
 
@@ -34,12 +36,13 @@ class AdminController
                 'img' => file_get_contents($_FILES['image']['tmp_name']),
             );
             $db = new product();
-            if ($db->insert($data)) {
+            if ($db->insert($data))
+            {
                 $data['success'] = "Product added successfully";
                 $data['products'] = $db->getAllProducts();
                 View::load('jewellery/admin/add', $data);
             } else {
-                $data['error'] = "Error";
+                $data['error'] = "Error ";
                 View::load('jewellery/admin/add', $data);
             }
 
@@ -48,6 +51,9 @@ class AdminController
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public function edit($id)
     {
         $db = new product();
@@ -59,6 +65,9 @@ class AdminController
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public function update($id)
     {
         if (isset($_POST['submit']))
@@ -104,9 +113,11 @@ class AdminController
     public function delete($id)
     {
         $db = new product();
-        if ($db->delete($id)) {
+        if ($db->delete($id))
+        {
             View::load('jewellery/admin/delete');
-        } else {
+        } else
+        {
             echo "Error";
         }
     }

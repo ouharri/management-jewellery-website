@@ -18,77 +18,74 @@
           rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"/>
+    <link href="../css/css.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet"/>
     <!--  font awesome icon-->
     <script src="https://kit.fontawesome.com/3d582d9974.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="sub_page">
+<body>
 
-<!-- Pills content -->
-<div class="w-100 p-4 d-flex justify-content-center mt-5 pb-3">
-    <div class="tab-content">
-        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-            <form>
-                <div class="text-center mb-3">
-                    <p>Sign in with:</p>
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-facebook-f"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-google"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-twitter"></i>
-                    </button>
-                </div>
-
-                <p class="text-center">or:</p>
-
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <input type="email" id="loginName" class="form-control"/>
-                    <label class="form-label" for="loginName">Email or username</label>
-                </div>
-
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                    <input type="password" id="loginPassword" class="form-control"/>
-                    <label class="form-label" for="loginPassword">Password</label>
-                </div>
-
-                <!-- 2 column grid layout -->
-                <div class="row mb-4">
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <!-- Checkbox -->
-                        <div class="form-check mb-3 mb-md-0">
-                            <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked/>
-                            <label class="form-check-label" for="loginCheck"> Remember me </label>
+<section class="ftco-section" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="wrap d-md-flex">
+                    <div class="img" style="background-image: url(../images/loginImg.jpg);">
+                    </div>
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Sign In</h3>
+                            </div>
+                            <div class="w-100">
+                                <p class="social-media d-flex justify-content-end">
+                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <!-- Simple link -->
-                        <a href="#!">Forgot password?</a>
+                        <form action="<?= url('login/connect') ?>" class="signin-form" method="post">
+                            <?php if(isset($error)) :?>
+                            <div class="alert alert-warning" role="alert">
+                                <?=$error?>
+                            </div>
+                            <?php unset($error); endif;?>
+                            <div class="form-group">
+                            <div class="form-group mb-3">
+                                <label class="label" for="name">Username</label>
+                                <input type="text" class="form-control" placeholder="Username" name="user" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="password">Password</label>
+                                <input type="password" class="form-control" placeholder="Password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50 text-left">
+                                    <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href="#">Forgot Password</a>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
                     </div>
                 </div>
-
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-warning btn-block mb-4">Sign in</button>
-
-                <!-- Register buttons -->
-                <div class="text-center">
-                    <p>Not a member? <a href="#!">Register</a></p>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
-
-<!-- Pills content -->
+</section>
 
 
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
