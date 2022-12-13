@@ -41,7 +41,7 @@
                 <h3 class="alert alert-danger text-center"><?php echo $error; ?></h3>
             <?php endif; ?>
 
-            <form class="p-5 border mb-5" method="POST" action="<?php url('admin/store'); ?>">
+            <form class="p-5 border mb-5" method="POST" action="<?php url('admin/store'); ?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" required name="name" class="form-control" id="name">
@@ -59,21 +59,11 @@
                     <input type="number" required class="form-control" name="qty" id="qty">
                 </div>
                 <div class="form-group">
-                    <label for="categorie">Categorie</label>
-                    <div class="input-group mb-3">
-                        <select class="custom-select" id="categorie" name="categorie">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
                     <label for="image">Image</label>
                     <div class="input-group">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="image" accept="image/png, image/jpg, image/gif, image/jpeg" required>
+                            <input type="file" class="custom-file-input" id="image" name="image"
+                                   accept="image/png, image/jpg, image/gif, image/jpeg" required>
                             <label class="custom-file-label" for="image">Choose file</label>
                         </div>
                     </div>

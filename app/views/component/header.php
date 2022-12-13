@@ -2,7 +2,7 @@
 <header class="header_section">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="<?=url('home')?>">
                 <img src="images/logo.png" alt="">
                 <span>
               Lodge
@@ -18,26 +18,26 @@
                 <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
                     <ul class="navbar-nav  ">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="<?= url('home') ?>">Home <span
+                                        class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html"> About</a>
+                            <a class="nav-link" href="<?= url('about') ?>"> About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="jewellery.html">Jewellery </a>
+                            <a class="nav-link" href="<?= url('product') ?>">Jewellery </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact us</a>
+                            <a class="nav-link" href="<?= url('contact') ?>">Contact us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
+                            <a class="nav-link" href="<?=url('login')?>">Login</a>
                         </li>
                     </ul>
-
                 </div>
                 <div class="quote_btn-container ">
                     <a href="">
-                        <img src="<?=BURL?>images/cart.png" alt="cart-image">
+                        <img src="<?= BURL ?>images/cart.png" alt="cart-image">
                         <div class="cart_number">
                             0
                         </div>

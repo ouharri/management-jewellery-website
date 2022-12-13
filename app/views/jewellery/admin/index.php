@@ -59,15 +59,15 @@
                                 <td>
                                     <img class="img-thumbnail" style="height: 50px; aspect-ratio: 1; object-fit: cover;" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['img']); ?>" alt="product image">
                                 </td>
-                                <td><?php echo $row['name']; ?></td>
+                                <td><?=$row['name']?></td>
                                 <td><?php echo $row['price'];?>&nbspDH</td>
                                 <td class="text-center"><?php echo $row['description']; ?></td>
                                 <td><?php echo $row['qty']; ?></td>
                                 <td>
-                                    <a href="<?php url('products/edit/' . $row['id']) ?>" class="btn btn-info">Edit</a>
+                                    <a href="<?php url('admin/edit/' . $row['id']) ?>" class="btn btn-info">Edit</a>
                                 </td>
                                 <td>
-                                    <a href="<?php url('products/delete/' . $row['id']) ?>" class="btn btn-danger">Delete</a>
+                                    <a href="<?php url('admin/delete/' . $row['id']) ?>" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
