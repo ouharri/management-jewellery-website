@@ -18,6 +18,8 @@
     <link href="../css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="../css/responsive.css" rel="stylesheet" />
+    <!--    box icon link-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body class="sub_page">
@@ -31,6 +33,9 @@
     <div class="container w-100">
         <div class="row">
             <div class="col-10 mx-auto pt-4 border mb-5 overflow-auto">
+                <div class="float-left mb-3">
+                    <a class="btn btn-warning d-flex align-items-center" href="<?=url('admin/add')?>" style="background-color: #fbb534e47b !important;""><i class='bx bx-plus-circle mr-1'></i> | add</a>
+                </div>
                 <?php if (isset($success)) : ?>
                     <h3 class="alert alert-success text-center"><?php echo $success; ?></h3>
                 <?php endif; ?>

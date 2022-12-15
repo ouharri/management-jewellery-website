@@ -115,7 +115,9 @@ class AdminController
         $db = new product();
         if ($db->delete($id))
         {
-            View::load('jewellery/admin/delete');
+            $data['success'] = "Product deleted successfully";
+            $data['products'] = $db->getAllProducts();
+            redirect('admin/index', $data);
         } else
         {
             echo "Error";

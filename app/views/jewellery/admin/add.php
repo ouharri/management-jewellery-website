@@ -20,6 +20,8 @@
     <link href="<?= BURL ?>css/style.css" rel="stylesheet"/>
     <!-- responsive style -->
     <link href="<?= BURL ?>css/responsive.css" rel="stylesheet"/>
+    <!--    box icon link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body class="sub_page">
@@ -41,8 +43,10 @@
                 <h3 class="alert alert-danger text-center"><?php echo $error; ?></h3>
             <?php endif; ?>
 
-            <form class="p-5 border mb-5" method="POST" action="<?php url('admin/store'); ?>" enctype="multipart/form-data">
-                <div class="form-group">
+            <form class="p-5 border mb-5" method="POST" action="<?php url('admin/store'); ?>"
+                  enctype="multipart/form-data">
+                <a href="<?= url('admin/index') ?>" style="color: #f5e47b"><i class='bx bx-left-arrow-alt'></i> back</a>
+                <div class="form-group mt-3">
                     <label for="name">Name</label>
                     <input type="text" required name="name" class="form-control" id="name">
                 </div>

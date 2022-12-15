@@ -39,6 +39,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?= url('contact') ?>">Contact us</a>
                         </li>
+                        <?php if (isset($_SESSION['login'])) : ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('admin') ?>">Dashboard</a>
+                            </li>
+                        <?php endif ?>
                         <li class="nav-item">
                             <?php if (isset($_SESSION['login'])) : ?>
                                 <a class="nav-link" href="<?= url('login/deconnect') ?>">Logout</a>
