@@ -20,7 +20,8 @@ require_once(CONFIG.'healpers.php');
 
 // autoload all classes 
 $modules = [ROOT_PATH,APP,CORE,VIEWS,CONTROLLERS,MODELS,CONFIG,LIBS];
+// echo get_include_path(). PATH_SEPARATOR.implode(PATH_SEPARATOR,$modules).'<br>';
 set_include_path(get_include_path(). PATH_SEPARATOR.implode(PATH_SEPARATOR,$modules));
-spl_autoload_register('spl_autoload',false);
+spl_autoload_register('spl_autoload');
 
 new app();

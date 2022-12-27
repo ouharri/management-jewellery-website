@@ -96,27 +96,30 @@
         </div>
         <div class="price_container">
             <?php foreach ($products as $row) : ?>
-            <div class="box">
-                <div class="name">
-                    <h6>
-                        <?=$row['name']?>
-                    </h6>
-                </div>
-                <div class="img-box">
-                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['img']); ?>" alt="product image">
-                </div>
-                <div class="detail-box">
-                    <h5>
-                        <span><?=$row['price']?></span>DH
-                    </h5>
-                    <h6>
-                        <span><?=$row['description']?></span>
-                    </h6>
-                    <a href="">
-                        Buy Now
+                <div class="box">
+                    <div class="name">
+                        <h6>
+                            <?= $row['name'] ?>
+                        </h6>
+                    </div>
+                    <a href="<?= url('product/detail/' . $row['id']) ?>">
+                        <div class="img-box">
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['img']); ?>"
+                                 alt="product image">
+                        </div>
                     </a>
+                    <div class="detail-box">
+                        <h5>
+                            <span><?= $row['price'] ?></span>DH
+                        </h5>
+                        <h6>
+                            <span><?= $row['description'] ?></span>
+                        </h6>
+                        <a href="">
+                            Buy Now
+                        </a>
+                    </div>
                 </div>
-            </div>
             <?php endforeach; ?>
         </div>
         <div class="d-flex justify-content-center">

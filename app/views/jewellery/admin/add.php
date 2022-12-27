@@ -52,7 +52,7 @@
                 </div>
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="text" required class="form-control" name="price" id="price">
+                    <input type="number" step="any" required class="form-control" name="price" id="price" min=1>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <label for="qty">Quantity</label>
-                    <input type="number" required class="form-control" name="qty" id="qty">
+                    <input type="number" required class="form-control" name="qty" id="qty" min=1>
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>

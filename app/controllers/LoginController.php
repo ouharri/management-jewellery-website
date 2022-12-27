@@ -37,6 +37,6 @@ class LoginController
         unset($_SESSION['login']);
         unset($_SESSION['name']);
         session_destroy();
-        redirect('login');
+        redirect('');
     }
 }
